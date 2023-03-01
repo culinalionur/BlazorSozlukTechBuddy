@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\BlazorSozluk.Api.Domain\BlazorSozluk.Api.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\BlazorSozluk.Application\BlazorSozluk.Application.csproj" />
   </ItemGroup>
 
 </Project>
