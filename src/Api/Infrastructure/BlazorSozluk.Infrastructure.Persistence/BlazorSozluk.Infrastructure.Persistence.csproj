@@ -21,8 +21,4 @@
     <ProjectReference Include="..\..\Core\BlazorSozluk.Api.Domain\BlazorSozluk.Api.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Context\EntityConfiguration\EntryComment\" />
-  </ItemGroup>
-
 </Project>
