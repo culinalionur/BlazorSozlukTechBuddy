@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace BlazorSozluk.Infrastructure.Persistence.Context.EntityConfiguration.Entry
 {
-    public class EntryCommentFavoriteEntityConfiguration : BaseEntityConfiguration<EntryFavorite>
+    public class EntryFavoriteEntityConfiguration : BaseEntityConfiguration<EntryFavorite>
     {
         public override void Configure(EntityTypeBuilder<EntryFavorite> builder)
         {
             base.Configure(builder);
 
-            builder.ToTable("EntryFavorites", BlazorSozlukContext.DEFAULT_SCHEMA);
+            builder.ToTable("entryFavorite", BlazorSozlukContext.DEFAULT_SCHEMA);
 
             builder.HasOne(i => i.Entry)
                 .WithMany(i => i.EntryFavorites)
