@@ -15,7 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazorSozluk.Application.Features.Commands.User
+namespace BlazorSozluk.Application.Features.Commands.User.Login
 {
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, LoginUserViewModel>
     {
@@ -32,14 +32,14 @@ namespace BlazorSozluk.Application.Features.Commands.User
 
         public async Task<LoginUserViewModel> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-            var dbUser = await _userRepository.GetSingleAsync(i=>i.EmailAddress == request.EmailAddress);
-            if(dbUser == null)
+            var dbUser = await _userRepository.GetSingleAsync(i => i.EmailAddress == request.EmailAddress);
+            if (dbUser == null)
             {
                 throw new DatabaseValidationException("User not found");
             }
 
             var pass = PasswordEncryptor.Encrypt(request.Password);
-            if(dbUser.Password!= pass)
+            if (dbUser.Password != pass)
             {
                 throw new DatabaseValidationException("Password is wrong");
             }
@@ -62,7 +62,7 @@ namespace BlazorSozluk.Application.Features.Commands.User
 
             return result;
 
-            
+
         }
         private string GenerateToken(Claim[] claims)
         {
@@ -78,5 +78,5 @@ namespace BlazorSozluk.Application.Features.Commands.User
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
-   
+
 }

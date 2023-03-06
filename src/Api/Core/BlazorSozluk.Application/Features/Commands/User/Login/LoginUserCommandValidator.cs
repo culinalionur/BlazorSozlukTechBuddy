@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazorSozluk.Application.Features.Commands.User
+namespace BlazorSozluk.Application.Features.Commands.User.Login
 {
     public class LoginUserCommandValidator : AbstractValidator<LoginUserCommand>
     {

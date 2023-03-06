@@ -1,4 +1,5 @@
-﻿using BlazorSozluk.Common.ViewModels.RequestModels;
+﻿using BlazorSozluk.Common.ViewModels.Queries;
+using BlazorSozluk.Common.ViewModels.RequestModels;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,19 @@ namespace BlazorSozluk.Api.WebApi.Controllers
         {
             var result = await _mediator.Send(command);
             return Ok(result);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody]CreateUserCommand command)
+        {
+            var guid = await _mediator.Send(command);
+
+            return Ok(guid);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update([FromBody]UpdateUserCommand command)
+        {
+            var guid = await _mediator.Send(command);
+            return Ok(guid);
         }
     }
 }
