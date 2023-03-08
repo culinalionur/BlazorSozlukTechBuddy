@@ -4,13 +4,13 @@ using BlazorSozluk.Common.Events.User;
 using BlazorSozluk.Common.Infrastructure;
 using BlazorSozluk.Common;
 using BlazorSozluk.Common.Infrastructure.Exceptions;
-using BlazorSozluk.Common.ViewModels.Queries;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlazorSozluk.Common.ViewModels.RequestModels;
 
 namespace BlazorSozluk.Application.Features.Commands.User.Update
 {

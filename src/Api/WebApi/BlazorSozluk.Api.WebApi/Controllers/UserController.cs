@@ -1,5 +1,4 @@
-﻿using BlazorSozluk.Common.ViewModels.Queries;
-using BlazorSozluk.Common.ViewModels.RequestModels;
+﻿using BlazorSozluk.Common.ViewModels.RequestModels;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
